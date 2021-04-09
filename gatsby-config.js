@@ -33,6 +33,19 @@ module.exports = {
     `gatsby-plugin-gatsby-cloud`,
     `gatsby-plugin-resolve-src`,
     `gatsby-plugin-styled-components`,
+    {
+      resolve: "gatsby-plugin-tinacms",
+      options: {
+        enabled: process.env.NODE_ENV !== "production",
+        sidebar: true,
+        plugins: [
+          "gatsby-tinacms-git",
+          "gatsby-tinacms-remark",
+          "gatsby-tinacms-json",
+        ],
+        manualInit: true,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
